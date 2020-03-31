@@ -1,6 +1,7 @@
 package br.com.compasso.brBanco.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import br.com.compasso.brBanco.model.Dinheiro;
@@ -24,7 +25,7 @@ public class CalculadorDeNotas {
 	}
 	
 	public List<Dinheiro> getListaDeCedulas() {
-		return listaDeCedulas;
+		return Collections.unmodifiableList(listaDeCedulas);
 	}
 	
 	public int quantidadeDeNotas(Notas nota) {

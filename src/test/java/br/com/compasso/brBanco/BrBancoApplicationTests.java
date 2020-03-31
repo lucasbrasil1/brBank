@@ -16,7 +16,7 @@ import br.com.compasso.brBanco.model.Saque;
 class BrBancoApplicationTests {
 
 	@Test
-	public void testaFuncionalidade() {
+	public void testaFuncionalidadeDoSaque() {
 		Saque saque = new Saque(880.0);
 		
 		List<Dinheiro> listaDeNotas = new ArrayList<Dinheiro>();
@@ -32,4 +32,5 @@ class BrBancoApplicationTests {
 		assertEquals(saque.getListaDeNotas().get(3).getQuantidade(), listaDeNotas.get(3).getQuantidade());
 	}
 
+	
 }
