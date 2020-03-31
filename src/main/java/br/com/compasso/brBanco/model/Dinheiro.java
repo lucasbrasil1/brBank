@@ -10,8 +10,8 @@ public class Dinheiro {
 		this.quantidade = quantidade;
 	}
 
-	public Notas getNota() {
-		return nota;
+	public double getNota() {
+		return nota.getValor();
 	}
 
 	public void setNota(Notas nota) {

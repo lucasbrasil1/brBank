@@ -11,13 +11,15 @@ public class Saque {
 	private Long id;
 	private Double valorASerSacado;
 	private LocalDateTime dataDeSaque = LocalDateTime.now();
+	private List<Dinheiro> cedulasParaSaque;
 	
-	public List<Dinheiro> getListaDeNotas(){
-		return Collections.unmodifiableList(new CalculadorDeNotas(this.valorASerSacado).getListaDeCedulas());
-	}
-
 	public Saque(Double valor) {
 		this.valorASerSacado = valor;
+		cedulasParaSaque = new CalculadorDeNotas(this.valorASerSacado).executa();
+	}
+	
+	public List<Dinheiro> getListaDeNotas(){
+		return Collections.unmodifiableList(cedulasParaSaque);
 	}
 	
 	public Long getId() {
@@ -43,5 +45,6 @@ public class Saque {
 	public void setDataDeSaque(LocalDateTime dataDeSaque) {
 		this.dataDeSaque = dataDeSaque;
 	}
+
 
 }

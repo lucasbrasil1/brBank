@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import br.com.compasso.brBanco.controller.form.SaqueForm;
 import br.com.compasso.brBanco.model.Dinheiro;
 import br.com.compasso.brBanco.model.Notas;
 import br.com.compasso.brBanco.model.Saque;
@@ -32,5 +33,26 @@ class BrBancoApplicationTests {
 		assertEquals(saque.getListaDeNotas().get(3).getQuantidade(), listaDeNotas.get(3).getQuantidade());
 	}
 
+	@Test
+	@org.junit.Test(expected = RuntimeException.class)
+	public void testaValorNaoDivisivel() {
+		SaqueForm form = new SaqueForm();
+		form.setValor(1234.0);
+	}
+	
+	@Test
+	@org.junit.Test(expected = RuntimeException.class)
+	public void testaValorMenorQueDez() {
+		SaqueForm form = new SaqueForm();
+		form.setValor(9.0);
+	}
+	
+	@Test
+	@org.junit.Test(expected = RuntimeException.class)
+	public void testaValorSaqueMenorQueZero() {
+		SaqueForm form = new SaqueForm();
+		form.setValor(-9.0);
+	}
+	
 	
 }

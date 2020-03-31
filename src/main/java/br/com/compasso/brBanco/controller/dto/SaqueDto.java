@@ -18,10 +18,8 @@ public class SaqueDto {
 		return Collections.unmodifiableList(listaDeNotas);
 	}
 
-
 	public void setListaDeNotas(List<Dinheiro> listaDeNotas) {
 		this.listaDeNotas = listaDeNotas;
 	}
-	
 	
 }
